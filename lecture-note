@@ -32,3 +32,69 @@ table
 
 list-group
     list-group-item
+=============================================================
+
+bootstrap default user experience
+
+form
+    form-control
+    form-select
+    button
+
+    
+Performance Practice
+    CSS first
+    JS last or use defer attribute
+    
+
+JavaScript Component
+    dropdown
+
+icon tech
+    use fontawesome
+    bitmap (outdated)
+    icon font
+    svg
+
+some fontawesome icons
+    fa-solid fa-home
+    fa-solid fa-user-circle
+    fa-solid fa-envelope
+    fa-solid fa-users
+    fa-solid fa-warning
+    fa-solid fa-arrow-left
+    fa-solid fa-paper-plane
+
+Layout
+    markup languages
+        mark-down markup languages use markers
+        HTML use tags
+        other languages also use tags
+
+    content 
+        info (content)     
+        meta-data
+            character set
+            viewport -> initial scale = 1.0
+            
+        
+        generic elements
+            div
+                block element => can define size
+                rendering flow => vertical arrangement
+            span
+                inline element => cannot define size
+                rendering flow => horizontal arrangement
+            
+            different rendering flow
+
+            layout structure => use block
+            content => use inline
+
+        container
+            display -> flex
+            flex direction
+            
+
+
+
