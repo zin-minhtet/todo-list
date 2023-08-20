@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        header {
-            width: 1200px;
-            height: 100px;
-            background: orangered;
-        }
-        main {
-            display: flex;
-        }
-        nav {
-            width: 300px;
-            height: 200px;
-            background: cyan;
-        }
-        article {
-            width: 600px;
-            height: 200px;
-            background: blue;
-        }
-        aside {
-            width: 300px;
-            height: 200px;
-            background: yellow;
-        }
-        footer {
-            width: 1200px;
-            height: 100px;
-            background: grey;
-        }
-    </style>
-</head>
-<body>
-    <header></header>
-    <main>
-        <nav></nav>
-        <article></article>
-        <aside></aside>
-    </main>
-    <footer></footer>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid bg-secondary py-4">
+            <div class="container bg-light" style="height: 300px"></div>
+        </div>
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <div class="bg-secondary" style="height: 200px"></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <div class="bg-secondary" style="height: 200px"></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <div class="bg-secondary" style="height: 200px"></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                    <div class="bg-secondary" style="height: 200px"></div>
+                </div>
+            </div>
+        </div>
+        <footer class="container text-center border-top py-3">
+            <small class="text-muted">Copyright 2023</small>
+        </footer>
+    </body>
 </html>

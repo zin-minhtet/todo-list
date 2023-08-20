@@ -94,7 +94,51 @@ Layout
         container
             display -> flex
             flex direction
-            
+
+=======================================================
+
+box-sizing
+    border-box
+
+responsive layout with CSS
+    media qurey syntex
+    
+    flex-wrap (go to next line if needed)
+
+css selectors
+    descendent selectors
+    child selectors
+    attribute selectors
+
+pseudo classes
+    hover
+    active
+    visited
+    first-child
+    last-child
+    nth-child(2)
+    focus
+
+selectors and code snippet
+    div#box>h3.title{Title}+ul>li*3>a[href=#]{Item $}
+
+
+Responsive layout bootstrap
+    xs,sm => default
+    md => tablet
+    lg => computer screen
+    xl,xxl => 4k screens,8k screens
+
+    row-col layout
+        12 column layout
+        gutter
+    
+    container-fluid
+        use fullscreen unlike container
+
+dashboard
+    dropdown-menu-end
+
 
 
 
