@@ -139,6 +139,61 @@ Responsive layout bootstrap
 dashboard
     dropdown-menu-end
 
+================================
+
+position
+    z-index
+    opicity
+
+    fixed, absolute => differet scroll behaviour
+
+    relative
+-------------------------------------------------------
+
+JavaScript
+    client side script language
+    dynamics Type
+
+
+Php
+    sever side language
+
+interpreted languages (script languages)
+    fast feedback loop
+    prefer in application softwares
+
+Type systems
+
+Paradigms
+    Imperative
+    OOP => best suit with user interface
+    functional
+        pure-function => same result in every invocation
+                         no side effect
+
+    JavaScript => multiparadigm
+    Php => imperative, OOP 
+
+Browser
+    Rendering Engine
+        Render HTML&CSS
+        khtml -> webkit by apple
+            used in apple-mail, safari,
+        webkit -> blink by Google
+    
+    JavaScript Engine
+        V8 by Google
+        V8 -> Node (JavaScript Rantime Technoloyg)
+
+    UI
+
+
+DOM
+    see html as object tree (DOM Tree)
+    DOM manipulation by JS (Manage html elements)
+
+JS code in onclick properties (obsolete)
+
 
 
 
