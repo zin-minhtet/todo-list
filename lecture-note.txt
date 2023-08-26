@@ -195,5 +195,51 @@ DOM
 JS code in onclick properties (obsolete)
 
 
+========================================================
 
+recall
+    - querySelector
+    - textContent
+    - style
+
+
+CSS properties
+    list-style
+    display : flex
+    cursor
+    min-height
+
+
+JavaScript
+    template literal(backtick)
+
+    var vs let
+        var - function scope
+        let - block scope
+
+    costants
+
+    function
+        first class function
+        nameless functions
+            store fnction as a value, run the function when followed by a pair of parenthesis
+        arrow function
+    
+    array
+        numeric array
+        named array (aka json array)
+            use curlybraces
+            can be used like object (property access operator)
+        array functions
+            map()
+            filter()
+                return true, return false;
+            reduce()
+                return one value from array as you code
+
+
+    carousel
+    
+    timeout function (setTimeout)
+    interval (setInterval)
 
