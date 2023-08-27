@@ -7,15 +7,18 @@
     <style>
         .wrap {
             position: relative;
+            width: 1200px;
+            margin: 20px auto;
         }
         .box {
             height: 250px;
             line-height: 250px;
-            font-size: 2em;
             text-align: center;
+            font-size: 2em;
+            color: white;
         }
         #box1 {
-            background: cyan;
+            background: aquamarine;
         }
         #box2 {
             background: gold;
@@ -25,18 +28,21 @@
             background: skyblue;
             display: none;
         }
-        button {
+        #prev, #next {
             position: absolute;
             top: 50%;
             font-size: 2em;
             color: white;
             background: transparent;
-            border: none;
+            border: 0 none;
             transform: translateY(-50%);
-            padding: 20px;
+
+        }
+        #prev {
+            left: 20px;
         }
         #next {
-            right: 0;
+            right: 20px;
         }
     </style>
 </head>
