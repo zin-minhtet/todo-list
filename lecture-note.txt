@@ -243,3 +243,30 @@ JavaScript
     timeout function (setTimeout)
     interval (setInterval)
 
+JS pop-pu boxes
+    alert() => return undefined
+    confirm() => return true/false
+    prompt() => return input
+
+    when pop-up, every other js codes are suspended,
+    they are browser native box, the style cannot be changed.
+
+    make our own popup boxes
+        modal
+            backdrop => to dim the background when modal box shows up
+    
+    float: right;
+
+    Dom manipulation
+        todo list program
+            document.creatElement("li");
+            appendChild();
+            .value;
+            .focus();
+            .onkeydown,
+            setAttribute()
+            .remove()
+            .parentElement
+
+JS function hoisting
+    put function to the top automatically 
