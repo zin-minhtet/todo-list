@@ -3,20 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+    <title>Tabs</title>
+    <style>
+        .tabs {
+            list-style: none;
+            margin: 0;
+            padding: 10px 10px 0 10px;
+            background: burlywood;
+            display: flex;
+        }
+        .tabs li {
+            background: white;
+            padding: 8px 30px;
+            color: black;
+            margin-right: 10px;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+        }
+        #tab2 {
+            opacity: 0.5;
+        }
+        .box {
+            min-height: 300px;
+            padding: 20px;
+            border: solid burlywood 10px;
+            border-top: 0;
+        }
+        #box2 {
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <button>Button</button>
+    <ul class="tabs">
+        <li id="tab1">Tab One</li>
+        <li id="tab2">Tab Two</li>
+    </ul>
+    <div class="box" id="box1">Box 1 contents</div>
+    <div class="box" id="box2">Other Contents</div>
 
     <script>
-        document.querySelector("button").onclick = hello;
-
-        function hello() {
-            var p = document.querySelector("p");
-            p.textContent = "Hello Javascript";
-            p.style.padding = "10px";
-            p.style.background = "cyan";
+        document.querySelector("#tab1").onclick = one;
+        document.querySelector("#tab2").onclick = two;
+        function one() {
+            document.querySelector("#tab1").style.opacity = 1;
+            document.querySelector("#tab2").style.opacity = 0.5;
+            document.querySelector("#box1").style.display = "block";
+            document.querySelector("#box2").style.display = "none";
+        }
+        function two() {
+            document.querySelector("#tab1").style.opacity = 0.5;
+            document.querySelector("#tab2").style.opacity = 1;
+            document.querySelector("#box1").style.display = "none";
+            document.querySelector("#box2").style.display = "block";
         }
     </script>
 </body>
