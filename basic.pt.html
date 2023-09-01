@@ -3,227 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>JS Array Methods</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row g-0">
-            <nav class="col-2 bg-light pe-3">
-                <!-- Brand Name -->
-                <h1 class="h4 text-primary text-center my-3">
-                    <i class="fa-solid fa-ghost"></i>
-                    <span class="ms-2 d-none d-lg-inline">Ghost Admin</span>
-                </h1>
+    <script>
+        const data = [
+            {name: "Alice", age: 22},
+            {name: "Bob", age: 18},
+            {name: "Chris", age: 20},
+            {name: "Dave", age: 23}
+        ];
 
-                <!-- Control List -->
-                <div class="list-group mb-4">
-                    <span class="list-group-item text-center text-muted disabled d-none d-lg-inline">
-                        <small>CONTROLS</small>
-                    </span>
-                    <a href="#" class="list-group-item list-group-item-action    text-center text-lg-start  active">
-                        <i class="fa-solid fa-home"></i>
-                        <span class="ms-1 d-none d-lg-inline">Dashboard</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-users"></i>
-                        <span class="ms-1 d-none d-lg-inline">Users</span>
-                        <span class="badge bg-danger rounded-pill float-end d-none d-lg-inline">20</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span class="ms-1 d-none d-lg-inline">Statistics</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-flag"></i>
-                        <span class="ms-1 d-none d-lg-inline">Reports</span>
-                    </a>
-                </div>
+        console.log(
+            data.map(user => user.name)
+        );
 
-                <!-- Action List -->
-                <div class="list-group">
-                    <span class="list-group-item text-center text-muted disabled d-none d-lg-inline">
-                        <small>ACTIONS</small>
-                    </span>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="ms-1 d-none d-lg-inline">New User</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-edit"></i>
-                        <span class="ms-1 d-none d-lg-inline">Update Data</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action text-center text-lg-start ">
-                        <i class="fa-solid fa-calendar-alt"></i>
-                        <span class="ms-1 d-none d-lg-inline">Add Events</span>
-                    </a>
-                </div>
-            </nav>
+        console.log(
+            data.filter(user => user.age >= 20)
+        );
 
-            <main class="col-10 bg-secondary">
-                <div class="navbar bg-light navbar-expand">
-                    <div class="flex-fill"></div>
-                    
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                <i class="fa-solid fa-user-circle"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <a href="#" class="dropdown-item">User Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dropdown-item">Logout</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa-solid fa-cog"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        console.log(
+            data
+                .filter(user => user.age >=20)
+                .map(user => user.name)
+        );
 
-                <div class="container mt-3 p-4">
-                    <div class="alert alert-info mb-4">
-                        <i class="fa-solid fa-download me-2"></i>
-                        <span>A new version of Admin Dashboard is released.</span>
-                        <a href="#">Download Now</a>
-                    </div>
-
-                    <div class="row flex-column flex-lg-row">
-                        <h2 class="h6 text-white-50">QUICK STATS</h2>
-                        <div class="col mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-title h2">1,250</h3>
-                                    <span class="text-success">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                        <span>Daily Visitors</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-title h2">8,210</h3>
-                                    <span class="text-success">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                        <span>Weekly Visitors</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-title h2">12,560</h3>
-                                    <span class="text-success">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                        <span>Monthly Visitors</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-title h2">102,250</h3>
-                                    <span class="text-success">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                        <span>Yearly Visitors</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row flex-column flex-lg-row">
-                        <div class="col mb-3">
-                            <h2 class="h6 text-white-50">LOCATION</h2>
-                            <div class="card" style="height: 280px;">
-                                <div class="card-body">
-                                    <small class="text-muted">Regional</small>
-                                    <div class="progress mt-2 mb-4" style="height: 5px;">
-                                        <div class="progress-bar bg-success w-25"></div>
-                                    </div>
-                                    <small class="text-muted">Global</small>
-                                    <div class="progress mt-2 mb-4" style="height: 5px;">
-                                        <div class="progress-bar bg-primary w-75"></div>
-                                    </div>
-                                    <small class="text-muted">Local</small>
-                                    <div class="progress mt-2 mb-4" style="height: 5px;">
-                                        <div class="progress-bar bg-warning w-50"></div>
-                                    </div>
-                                    <small class="text-muted">International</small>
-                                    <div class="progress mt-2 mb-4" style="height: 5px;">
-                                        <div class="progress-bar bg-danger w-25"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-3">
-                            <h2 class="h6 text-white-50">DATA</h2>
-                            <div class="card bg-light" style="height: 280px;">
-                                <div class="card-body">
-                                    <div class="text-end">
-                                        <button class="btn btn-sm btn-outline-secondary">
-                                            <i class="fa-solid fa-search"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-secondary">
-                                            <i class="fa-solid fa-sort-amount-up"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-secondary">
-                                            <i class="fa-solid fa-filter"></i>
-                                        </button>
-                                    </div>
-                                    <table class="table">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Age Group</th>
-                                            <th>Data</th>
-                                            <th>Progress</th>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>20-30</td>
-                                            <td>19%</td>
-                                            <td><i class="fa-solid fa-chart-pie"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>30-40</td>
-                                            <td>40%</td>
-                                            <td><i class="fa-solid fa-chart-bar"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>40-50</td>
-                                            <td>30%</td>
-                                            <td><i class="fa-solid fa-chart-line"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>>50</td>
-                                            <td>11%</td>
-                                            <td><i class="fa-solid fa-chart-pie"></i></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <footer class="text-muted text-center py-4">Copyright &copy; 2023</footer>
-    </div>
+    </script>
 </body>
 </html>
