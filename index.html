@@ -3,60 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabs</title>
+    <title>Carousel</title>
     <style>
-        .tabs {
-            list-style: none;
-            margin: 0;
-            padding: 10px 10px 0 10px;
-            background: burlywood;
-            display: flex;
-        }
-        .tabs li {
-            background: white;
-            padding: 8px 30px;
-            color: black;
-            margin-right: 10px;
-            border-radius: 10px 10px 0 0;
-            cursor: pointer;
-        }
-        #tab2 {
-            opacity: 0.5;
+        .wrap {
+            position: relative;
         }
         .box {
-            min-height: 300px;
-            padding: 20px;
-            border: solid burlywood 10px;
-            border-top: 0;
+            height: 250px;
+            line-height: 250px;
+            font-size: 2em;
+            text-align: center;
+        }
+        #box1 {
+            background: cyan;
         }
         #box2 {
+            background: gold;
             display: none;
         }
-
+        #box3 {
+            background: skyblue;
+            display: none;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            font-size: 2em;
+            color: white;
+            background: transparent;
+            border: none;
+            transform: translateY(-50%);
+            padding: 20px;
+        }
+        #next {
+            right: 0;
+        }
     </style>
 </head>
 <body>
-    <ul class="tabs">
-        <li id="tab1">Tab One</li>
-        <li id="tab2">Tab Two</li>
-    </ul>
-    <div class="box" id="box1">Box 1 contents</div>
-    <div class="box" id="box2">Other Contents</div>
+    <div class="wrap">
+        <button id="prev">&laquo;</button>
+        <button id="next">&raquo;</button>
+        <div class="box" id="box1">Box1</div>
+        <div class="box" id="box2">Box2</div>
+        <div class="box" id="box3">Box3</div>
+    </div>
 
     <script>
-        document.querySelector("#tab1").onclick = one;
-        document.querySelector("#tab2").onclick = two;
-        function one() {
-            document.querySelector("#tab1").style.opacity = 1;
-            document.querySelector("#tab2").style.opacity = 0.5;
-            document.querySelector("#box1").style.display = "block";
-            document.querySelector("#box2").style.display = "none";
+        document.querySelector("#prev").onclick = prev;
+        document.querySelector("#next").onclick = next;
+        setInterval(next,3000);
+        
+        let box = 1;
+
+        function prev() {
+            document.querySelector("#box"+box).style.display = "none";
+            box--;
+            if(box<1) box = 3;
+            document.querySelector("#box"+box).style.display = "block";
         }
-        function two() {
-            document.querySelector("#tab1").style.opacity = 0.5;
-            document.querySelector("#tab2").style.opacity = 1;
-            document.querySelector("#box1").style.display = "none";
-            document.querySelector("#box2").style.display = "block";
+        function next() {
+            document.querySelector("#box"+box).style.display = "none";
+            box++;
+            if(box>3) box = 1;
+            document.querySelector("#box"+box).style.display = "block";
         }
     </script>
 </body>
