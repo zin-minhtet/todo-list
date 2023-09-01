@@ -3,70 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel</title>
+    <title>Modal</title>
     <style>
-        .wrap {
-            position: relative;
+        body {
+            width: 1200px;
+            min-height: 400px;
+            margin: 40px auto;
         }
-        .box {
-            height: 250px;
-            line-height: 250px;
-            font-size: 2em;
-            text-align: center;
-        }
-        #box1 {
-            background: cyan;
-        }
-        #box2 {
-            background: gold;
-            display: none;
-        }
-        #box3 {
-            background: skyblue;
-            display: none;
-        }
-        button {
+        #backdrop {
             position: absolute;
-            top: 50%;
-            font-size: 2em;
-            color: white;
-            background: transparent;
-            border: none;
-            transform: translateY(-50%);
-            padding: 20px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0 ;
+            background-color: black;
+            opacity: 0.5;
+            display: none;
         }
-        #next {
-            right: 0;
+        #modal {
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            width: 40%;
+            height: 250px;
+            background: #333;
+            display: none;
+        }
+        #modal h2 {
+            color: white;
+            font-size: 24px;
+            padding: 6px 12px;
+            margin: 0;
+            background: #111;
+        }
+        #modal h2 span {
+            float: right;
+            color: red;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <button id="prev">&laquo;</button>
-        <button id="next">&raquo;</button>
-        <div class="box" id="box1">Box1</div>
-        <div class="box" id="box2">Box2</div>
-        <div class="box" id="box3">Box3</div>
+    <h1>Modal Box</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit architecto dolorum laudantium ut, quibusdam modi similique maxime quas magni porro?</p>
+    <button>Show Modal</button>
+
+    <div id="backdrop"></div>
+    <div id="modal">
+        <h2>Box Title <span>&times;</span></h2>
     </div>
-
     <script>
-        document.querySelector("#prev").onclick = prev;
-        document.querySelector("#next").onclick = next;
-        setInterval(next,3000);
-        
-        let box = 1;
-
-        function prev() {
-            document.querySelector("#box"+box).style.display = "none";
-            box--;
-            if(box<1) box = 3;
-            document.querySelector("#box"+box).style.display = "block";
+        document.querySelector("button").onclick = show;
+        document.querySelector("#backdrop").onclick = hide;
+        document.querySelector("#modal h2 span").onclick = hide;
+        function show() {
+            document.querySelector("#backdrop").style.display = "block";
+            document.querySelector("#modal").style.display = "block";
         }
-        function next() {
-            document.querySelector("#box"+box).style.display = "none";
-            box++;
-            if(box>3) box = 1;
-            document.querySelector("#box"+box).style.display = "block";
+        function hide() {
+            document.querySelector("#backdrop").style.display = "none";
+            document.querySelector("#modal").style.display = "none";
         }
     </script>
 </body>
