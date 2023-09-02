@@ -270,3 +270,49 @@ JS pop-pu boxes
 
 JS function hoisting
     put function to the top automatically 
+
+=====================================================
+querySelectorAll => return array of 
+
+
+UI and data
+
+    vanila js => plain js (mix ui and data)
+    vue , react => solve that problem
+
+innerHTML
+
+JS Local Storage
+    localStorage
+        .setItem();
+        .getItem();
+        .removeItem();
+        .clear();
+
+    localStorage only accept text(string);
+
+    but u can use
+        JSON.stringify() => obj to str
+        JSON.parse() => str to obj
+    
+JS Objects
+    Classical oop languages => need class to create obj
+
+    JS use JSON(JS Obj Notation)
+        JS object literal => {}
+        called Prototype OOP
+
+        also added class syntax in JS
+
+
+    Static properties is access through Class 
+
+    properties shorten
+        properties
+            name == properties? just name;
+
+    Obj destructure
+        {property-list} = obj;
+        [var-list] = arr;
+
+
