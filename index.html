@@ -10,7 +10,16 @@
 <body>
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container" style="max-width: 600px">
-            <a href="#" class="navbar-brand">Todo List</a>
+            <a href="#" class="navbar-brand">
+                Todo List
+                <span class="badge bg-danger ms-2">0</span>
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="clear">Clear</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="container" style="max-width: 600px">
@@ -18,15 +27,49 @@
             <input type="text" class="form-control">
             <button class="btn btn-dark">Add</button>
         </div>
-        <ul id="todo" class="list-group"></ul>
+        <ul id="todo" class="list-group mb-4"></ul>
+        <ul id="done" class="list-group" style="opacity: 0.5"></ul>
     </div>
 
     <script>
+        let data = getData();
+        data.map(item => createItem(item.text));
+
+        function getData() {
+            return JSON.parse(localStorage.getItem("data")) || [];
+        }
+
+        function saveData(text) {
+            let data = getData();
+            // data.push({text: text, done: false});
+            data.push({text, done: false});
+            localStorage.setItem("data", JSON.stringify(data));
+        }
+
+        function removeData(text) {
+            let data = getData();
+            let result = data.filter(item => item.text != text);
+            localStorage.setItem("data", JSON.stringify(result));
+        }
+
+        function updateCount() {
+            document.querySelector(".badge").textContent = 
+                document.querySelectorAll("#todo li").length;
+        }
+
+        document.querySelector("#clear").onclick = () => {
+            document.querySelector("#done").innerHTML = "";
+            // document.querySelector("#done").textContent = "";
+        }
+
         document.querySelector("button").onclick = () => {
             let text = document.querySelector("input").value;
-            
             if(text=="") return false;
+
             createItem(text);
+            saveData(text);
+            updateCount();
+
             document.querySelector("input").value = "";
             document.querySelector("input").focus();
         }
@@ -47,8 +90,20 @@
             del.classList.add("fa-solid", "fa-trash", "text-danger", "float-end");
             del.onclick = () => {
                 li.remove();
+                removeData(text);
+                updateCount();
             }
             li.appendChild(del);
+
+            let check = document.createElement("a");
+            check.setAttribute("href", "#");
+            check.classList.add("fa-solid", "fa-check", "float-start", "me-3");
+            check.onclick = () => {
+                document.querySelector("#done").appendChild(li);
+                check.remove();
+                updateCount();
+            }
+            li.appendChild(check);
 
             document.querySelector("#todo").appendChild(li);
         }
