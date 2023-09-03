@@ -315,4 +315,71 @@ JS Objects
         {property-list} = obj;
         [var-list] = arr;
 
+=====================================================
+
+Php
+    need to set up development environment
+        1. web server
+            apache (open source) => we use
+            ngx
+            microsoft ins
+        2. php interpreter
+        
+        3. connect 1 and 2
+
+        4. Modules
+            eg. compression Modules 
+                client request -> web server use this module to compress -> response to client
+
+        5. Php extensions
+            eg. image convert
+        
+        6. database
+
+        7. DB Admin softwares
+
+        xamp include all of them
+            good for local usage
+
+            not good for server
+                a lot of extras
+                bad performance and security
+
+
+for windows
+    run xampp as Admin
+    check apache and mysql
+    and start them
+        they will be starting background all the time (not much resources)
+    add php to environment variables
+    composer setup (need internet)
+
+
+on machine
+    client => browser
+    server => apache
+        document root (htdocs)
+            windows => C:\xampp\
+            mac => /application/xampp
+            linux => /opt/lampp/
+
+for linux
+    chmod +x xampp-linux-x64-8.2.4-0-installer.run  
+    sudo ./xampp-linux-x64-8.2.4-0-installer.run
+    log_errors = on in /opt/lampp/etc/php.ini
+    sudo chmod -R 777 htdocs
+    add this to .zshrc
+        export PATH=/opt/lampp/bin:$PATH
+    source .zshrc
+    install composer from getcomposer.org
+
+    sudo opt/lampp/lampp start
+
+apache server
+    is accessed through localhost
+    is on document root => htdocs
+
+php
+    <?php /*code*/ ?>
+
 
