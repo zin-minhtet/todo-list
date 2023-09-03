@@ -33,7 +33,7 @@
 
 		<script>
 			let data = getData();
-			data.map(item => createItem(item.text));
+			data.map(item => createItem(item.text, item.done));
 
 			function getData() {
 				return JSON.parse(localStorage.getItem("data")) || [];
@@ -43,18 +43,33 @@
 				data.push({text, done: false});
 				localStorage.setItem("data", JSON.stringify(data));
 			}
+			function checkData(text) {
+				let data = getData();
+				let result = data.map(item => {
+					if(item.text == text) item.done = true;
+					return item;
+				});
+				localStorage.setItem("data",JSON.stringify(result));
+			}
 			function removeData(text) {
 				let data = getData();
 				let result = data.filter(item => item.text != text);
 				localStorage.setItem("data", JSON.stringify(result));
 			}
-
-			document.querySelector("#clear").onclick = () =>
-				document.querySelector("#done").innerHTML = "";
+			function clearData() {
+				let data = getData();
+				let result = data.filter(item => !item.done);
+				localStorage.setItem("data", JSON.stringify(result));
+			}
 
 			function updateCount() {
 				document.querySelector(".badge").textContent =
 					document.querySelectorAll("#todo li").length;
+			}
+			
+			document.querySelector("#clear").onclick = () => {
+				document.querySelector("#done").innerHTML = "";
+				clearData();
 			}
 
 			document.querySelector("button").onclick = () => {
@@ -71,7 +86,7 @@
 				if (e.key == "Enter") document.querySelector("button").onclick();
 			};
 
-			function createItem(text) {
+			function createItem(text,done) {
 				let li = document.createElement("li");
 				li.classList.add("list-group-item");
 				li.textContent = text;
@@ -91,12 +106,17 @@
 				check.classList.add("fa-solid", "fa-check", "float-start", "me-3");
 				check.onclick = () => {
 					document.querySelector("#done").appendChild(li);
+					checkData(text);
 					check.remove();
 					updateCount();
 				}
-				li.appendChild(check);
+				if(!done)
+					li.appendChild(check);
 
-				document.querySelector("#todo").appendChild(li);
+				if(done)
+					document.querySelector("#done").appendChild(li);
+				else
+					document.querySelector("#todo").appendChild(li);
 				updateCount();
 			}
 		</script>
